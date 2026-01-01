@@ -1,0 +1,38 @@
+// ...existing code...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>C++ Quiz Generator</title>
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+<button class="back-btn" onclick="goBack()">Back</button>
+<h1>Take The C++ Quiz Challege!🧠🚀</h1>
+<br>
+<p>{ It doesn't matter if you’re right or wrong, what matters is that you try, learn, and keep going ✨ }</p>
+
+<div class="container">
+    <h2>C++ Quiz</h2>
+    <select id="topicSelect">
+        <option value="">-- Select Topic --</option>
+        <option value="basics">Basics of C++</option>
+        <option value="datatypes">Data Types & Variables</option>
+        <option value="loops">Loops in C++</option>
+        <option value="functions">Functions in C++</option>
+        <option value="arrays">Arrays in C++</option>
+        <option value="pointers">Pointers in C++</option>
+        <option value="oops">OOPS Concepts</option>
+    </select>
+    <button id="generateBtn">Generate Quiz</button>
+    <div id="quizBox"></div>
+    <button id="submitBtn" style="display:none;">Submit Quiz</button>
+    <div id="result"></div>
+</div>
+<BR>
+<p>{ Even if you fail, you’re still learning more than doing nothing👍🏻 }
+</p>
+
+<script src="quiz.js"></script>
+</body>
+</html>

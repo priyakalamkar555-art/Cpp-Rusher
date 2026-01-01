@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in C++</title>
+    <link rel="stylesheet" href="arrays.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <button class="back-btn" onclick="goBack()">Back</button>
+    <div class="text-box">
+    <h2># Arrays in C++ #</h2>
+   <h1>1. Definition of Array</h1>
+<pre>
+An array is a derived data type in C++ that stores a fixed-size collection of elements
+of the same data type in contiguous memory locations.
+Each element of an array is identified by an index (subscript), which starts from 0.
+</pre>
+<h3>Characteristics of an Array</h3>
+<pre>
+● Stores multiple values under one variable name
+● All elements are of same data type
+● Memory locations are contiguous
+● Indexing starts from 0
+● Size is fixed at compile time (static arrays)
+</pre>
+<h1>2.Declaration of an Array</h1>
+<pre>
+    <div class="code-box"> 
+    ● Syntax:
+    data_type array_name[size];
+
+    ● Example:
+    int numbers[10];
+    float marks[5];
+    char grade[3];
+    </div>
+</pre>
+<h1>3.Initialization of Arrays</h1>
+<h3>3.1 Initialization at Declaration</h3>
+<pre>
+    <div class="code-box"> 
+    int arr[5] = {10,20,30,40,50};
+    </div>
+</pre>
+<h3>3.2 Without Specifying Size</h3>
+<pre>
+    <div class="code-box"> 
+    int arr[] = {1,2,3,4};
+    </div>
+</pre>
+<h3>3.3 Partial Initialization</h3>
+<pre>
+    <div class="code-box"> 
+    int arr[5] = {1,2};
+Remaining elements are initialized to 0
+</div>
+</pre>
+<h3>3.4 Initialization Using Loop</h3>
+<pre>
+    <div class="code-box"> 
+    for(int i = 0; i < 5; i++)
+      arr[i] = i * 2;
+    </div>
+</pre>
+<h1>4. Accessing Array Elements</h1>
+<pre>
+    <div class="code-box"> 
+    ● Syntax:
+    array_name[index];
+
+    ● Example:
+    cout << arr[0]; //first element
+    cout << arr[4]; //fifth element
+
+Accessing an invalid index causes undefined behavior. 
+    </div>
+</pre>
+<h1>5. Input and Output of Arrays</h1>
+<div class="code-box"> 
+<h3>Input</h3>
+<pre>
+    for(int i = 0; i < n; i++)
+      cin >> arr[i];
+</div>
+</pre>
+<div class="code-box"> 
+<h3>Output</h3>
+<pre>
+    for(int i = 0; i < n; i++)
+      cout << arr[i] <<" ";
+</div>
+</pre>
+<h1>6. Memmory Representation of Arrays</h1>
+<pre>
+● Arrays are stored in contiguous memory blocks
+● Address of each element =
+Base Address + (Index × Size of Data Type)
+<div class="code-box"> 
+Example:
+int arr[3];
+if base address = 1000 and int = 4 bytes:
+</div>
+</pre>
+<table class="table" border="1">
+    <tr>
+        <th>Element</th>
+        <th>Address</th>
+    </tr>
+    <tr>
+        <td>arr[0]</td>
+        <td>1000</td>
+    </tr>
+    <tr>
+         <td>arr[1]</td>
+        <td>1004</td>
+    </tr>
+    <tr>
+         <td>arr[2]</td>
+        <td>1008</td>
+    </tr>
+</table>
+<h1>7. Types of Arrays</h1>
+<h3>7.1 One-Dimentional Array</h3>
+<pre>
+    <div class="code-box"> 
+    int arr[5];
+Used to store linear data like marks, scores, list of numbers.
+</div>
+</pre>
+<h3>7.2 Two-Dimentional Array</h3>
+<pre>
+    <div class="code-box"> 
+    Used to represent tables and matrices.
+   ● Declaration:
+    int matrix[3][4];
+    </div>
+    <div class="code-box"> 
+   ● Initialization:
+    int mat[2][2] = {{1,2},{3,4}};
+    </div>
+    <div class="code-box"> 
+   ● Access:
+    mat[1][0]; //3
+    </div>
+    <div class="code-box"> 
+   ● Input & Output:
+    for(int i = 0; i < r; i++)
+      for(int j = 0; j < c; j++)
+         cin >> mat[i][j];
+    </div>
+</pre>
+<h3>7.3 Multi-Dimentional Array</h3>
+<pre>
+    <div class="code-box"> 
+    Arrays with more than two dimentions.
+     int arr[2][3][4];
+     </div>
+</pre>
+<h1>8. Array Indexing Rules</h1>
+<pre>
+    <div class="code-box"> 
+● Index starts from 0
+● Last index = size - 1
+● Negative indexing ❌ not allowed
+● Out-of-range index ❌ unsafe
+</div>
+</pre>
+<h1>9. Common Operations on Arrays</h1>
+<div class="code-box"> 
+<h3>9.1 Traversing</h3>
+<pre>
+    Visiting all elements.
+    
+    for(int i = 0; i < n; i++)
+       cout << arr[i];
+</div>
+</pre>
+<div class="code-box"> 
+<h3>9.2 Insertion</h3>
+<pre>Insert element at a position(manual shifting required)</div></pre>
+<div class="code-box"> 
+<h3>9.3 Deletion</h3>
+<pre>Delete element by shifting elements left.</div></pre>
+<div class="code-box"> 
+<h3>9.4 Searching</h3>
+<pre>
+    ● Linear search 
+    for(int i = 0; i < n; i++)
+      if(arr[i] == key)
+        found = true;
+    ● Binary search 
+     1. works only on sorted arrays
+     2. Faster than linear search
+</div>
+</pre>
+<div class="code-box"> 
+<h3>9.5 Sorting </h3>
+<pre>
+    Common techniques:
+    ● Bubble Sort 
+    ● Selection Sort 
+    ● Insertion Sort 
+</div>
+</pre>
+<h1>10. Passing Arrays to Functions</h1>
+<pre>
+    <div class="code-box"> 
+    ● Syntax:
+    void display(int arr[], int size)
+
+    ● Example:
+    void show(int a[], int n){
+      for(int i = 0; i < n; i++)
+        cout << a[i];
+}
+    ● Call:
+    show(arr,5);
+Arrays are passed by reference by default.
+</div>
+</pre>
+<h1>11. Relationship Between Arrays and Pointers</h1>
+<pre>
+    ● Array name represent the base address 
+    ● arr is equivalent to &arr[0] 
+    <div class="code-box"> 
+    int arr[5];
+    cout << arr; //address
+    cout << &arr[0]; //same address
+    </div>
+</pre>
+<h1>12. Character Arrays (strings)</h1>
+<div class="code-box"> 
+<h3>Declaration:</h3>
+<pre>
+    char name[10] = "cplusplus";
+</div>
+</pre>
+<div class="code-box"> 
+<h3>Input:</h3>
+<pre>
+    cin >> name;
+</div>
+</pre>
+<div class="code-box"> 
+<h3>Using string(preffered):</h3>
+<pre>
+    string name = "C++";
+</div>
+</pre>
+<h1>13.Limitations of Arrays</h1>
+<pre>
+● Fixed size
+● Cannot grow or shrink
+● Possible memory wastage
+● No bounds checking
+● Only same data type allowed
+</pre>
+<h1>14. Advantages of Arrays </h1>
+<pre>
+● Fast access
+● Easy data management
+● Efficient memory usage
+● Useful for sorting & searching   
+</pre>
+<h1>15. Common errors in Arrays</h1>
+<pre>
+● Index out of bounds
+● Using uninitialized arrays
+● Wrong loop conditions
+● Forgetting array size  
+</pre>
+<h1>16. Summary</h1>
+<pre>
+● Array index starts from 0
+● Arrays store same data type
+● Array name holds base address
+● Arrays are passed by reference
+● Size cannot be changed after declaration
+</pre>
+<h1># Some IMP Codes of an Arrays #</h1>
+<h1>1. Read and Print Elements of an Array </h1>
+<pre>
+    <div class="code-box"> 
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int arr[5];
+    cout << "Enter 5 elements: ";
+    for(int i = 0; i < 5; i++)
+        cin >> arr[i];
+    cout << "Elements are: ";
+    for(int i = 0; i < 5; i++)
+        cout << arr[i] << " ";
+    return 0;
+}
+</div>
+</pre>
+<h1>2. Find the Sum and Average of an Array</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+    using namespace std;
+    int main() {
+        int arr[5];
+        cout << "Enter 5 elements: ";
+        for(int i = 0; i < 5; i++)
+            cin >> arr[i];
+        int sum = 0;
+        for(int i = 0; i < 5; i++)
+            sum += arr[i];
+        double avg = sum / 5.0;
+        cout << "Sum: " << sum << ", Average: " << avg;
+        return 0;
+    }
+</div>
+</pre>
+<h1>3. Find the Largest Element in an Array</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+    using namespace std;
+    int main() {
+        int arr[5];
+        cout << "Enter 5 elements: ";
+        for(int i = 0; i < 5; i++)
+            cin >> arr[i];
+        int max = arr[0];
+        for(int i = 1; i < 5; i++)
+            if(arr[i] > max)
+                max = arr[i];
+        cout << "Largest element: " << max;
+        return 0;
+    }
+</div>
+</pre>
+<h1>4. Find the Smallest Element in an Array</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+    using namespace std;
+    int main() {
+        int arr[5];
+        cout << "Enter 5 elements: ";
+        for(int i = 0; i < 5; i++)
+            cin >> arr[i];
+        int min = arr[0];
+        for(int i = 1; i < 5; i++)
+            if(arr[i] < min)
+                min = arr[i];
+        cout << "Smallest element: " << min;
+        return 0;
+    }
+</div>
+</pre>
+<h1>5. Reverse an Array</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+    using namespace std;
+    int main() {
+        int arr[5];
+        cout << "Enter 5 elements: ";
+        for(int i = 0; i < 5; i++)
+            cin >> arr[i];
+        for(int i = 0; i < 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[4 - i];
+            arr[4 - i] = temp;
+        }
+        cout << "Reversed array: ";
+        for(int i = 0; i < 5; i++)
+            cout << arr[i] << " ";
+        return 0;
+    }
+</div>
+</pre>
+<h1>6. Check if an Array is Sorted</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+    using namespace std;
+    int main() {
+        int arr[5];
+        cout << "Enter 5 elements: ";
+        for(int i = 0; i < 5; i++)
+            cin >> arr[i];
+        bool sorted = true;
+        for(int j = 0; j < (n - 1); j++) {
+            if(arr[j] > arr[j + 1]) {
+                sorted = false;
+                break;
+            }
+        }
+        if(sorted)
+            cout << "Array is sorted";
+         else
+             cout << "Array is not sorted";
+         return 0;
+     }
+    </div>
+</pre>
+<h1>7. Linear Search in an Array</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+    using namespace std;
+    int main() {
+        int arr[5];
+        cout << "Enter 5 elements: ";
+        for(int i = 0; i < 5; i++)
+            cin >> arr[i];
+        int key;
+        cout << "Enter element to search: ";
+        cin >> key;
+        bool found = false;
+        for(int i = 0; i < 5; i++)
+            if(arr[i] == key) {
+                found = true;
+                break;
+            }
+        if(found)
+            cout << "Element found";
+         else
+             cout << "Element not found";
+         return 0;
+     }
+    </div>
+</div>
+</pre>
+</body>
+</html>

@@ -1,0 +1,131 @@
+body{
+    background-color: black;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+header{
+    background-color: #161b22;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgb(0, 0,0,4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ced3da;
+    font-style: italic;
+    font-weight: bold;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: 0.3s;
+   font-size: 1.6rem;
+   color: #ced3da;
+} 
+nav a:hover{
+    color: #ced3da;
+}
+
+h1{
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 0%;
+   
+}
+h2{
+    font-size: 1.5rem;
+   font-family: 'Times New Roman', Times, serif;
+   color: rgb(170, 169, 169);
+}
+h3{
+    font-size: 2.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;  
+     margin-bottom: 0%; 
+     color: #58a6ff87; 
+     
+}
+
+p{
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+     color: rgb(170, 169, 169);
+}
+
+.container{
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+.container::-webkit-scrollbar{
+    display: none;
+}
+.box{
+    margin-top: 40px;
+    min-width: 250px;
+    background-color: #161b22;
+    border: 2px solid #30363d;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(88,166,255,0.3);
+    transition: transform 0.3s ease;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.box:hover{
+    transform: scale(1.07);
+    border-radius: #58a6ff;
+}
+button{
+    width: 120px;
+    height: 60px;
+    border: 2px solid rgb(57, 56, 56);
+    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: rgb(68, 67, 67);
+    color: white;
+    box-shadow: 0 0 0 1px rgb(86, 86, 86);
+    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
+    margin-top: 40px;
+}
+button:hover{
+    transform: scale(1.15);
+    border-radius: #2a2c3e;
+}
+.card{
+    width: 400px;
+    height: 100px;
+    border: 1px solid rgba(79, 75, 75, 0.768);
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0 0 0 1px rgb(86, 86, 86);
+    transition: transform 0.3s ease;
+    background-color: rgb(52, 50, 50);
+    margin: auto;
+    margin-top: 150px;   
+}
+.card:hover{
+    transform: scale(1.05);
+    border-radius: #a0a29fed;
+}
+footer p{
+   margin-top: 5%;
+   font-size: 1rem;
+   color: rgb(197, 195, 195);
+}

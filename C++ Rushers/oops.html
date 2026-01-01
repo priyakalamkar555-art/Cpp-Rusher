@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops Concepts in C++</title>
+        <link rel="stylesheet" href="oops.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <button class="back-btn" onclick="goBack()">Back</button>
+     <div class="text-box">
+    <h2># OOP Concepts in C++ #</h2>
+    <h1>1. What is an Object Oriented Programming ?</h1>
+    <pre>
+Object-Oriented Programming (OOP) is a programming approach that organizes a program around objects 
+and classes instead of functions and logic alone.
+An object represents a real-world entity (like Student, Car, BankAccount) and contains:
+
+● Data members (variables)
+● Member functions (methods)
+
+C++ supports both procedural and object-oriented programming.
+    </pre>
+    <h1>2. Classes in C++</h1>
+    <pre>
+A class is a user-defined data type that acts as a blueprint for creating objects.
+Characteristics:
+
+● Contains data and functions
+● Does not occupy memory until objects are created
+<div class="code-box"> 
+● Example:
+class Student {
+public:
+    int roll;
+    string name;
+
+    void show() {
+        cout << roll << " " << name;
+    }
+};
+</div>
+    </pre>
+    <h1>3. Objects in C++</h1>
+    <pre>
+An object is an instance of a class.
+Memory is allocated when an object is created.
+<div class="code-box"> 
+        Student s1;
+        s1.roll = 1;
+        s1.name = "Aman";
+        s1.show();
+        </div>
+    </pre>
+    <h1>4. Encapsulation</h1>
+    <pre>
+Encapsulation means binding data and functions together and protecting data from outside access.
+
+Achieved using:
+
+● Classes
+● Access specifiers
+
+Benefits:
+
+● Data security
+● Controlled access
+● Better maintainability
+<div class="code-box"> 
+● Example:
+
+class Bank {
+private:
+    int balance;
+public:
+    void setBalance(int b) {
+        balance = b;
+    }
+    int getBalance() {
+        return balance;
+    }
+};
+</div>
+    </pre>
+    <h1>5. Abstraction</h1>
+    <pre>
+Abstraction means hiding internal implementation details and showing only what is necessary.
+
+● Example:
+
+When you use cout, you don’t know how it prints internally — that’s abstraction.
+
+Achieved using:
+
+● Classes
+● Header files
+● Access specifiers
+    </pre>
+    <h1>6. Inheritance</h1>
+    <pre>
+Inheritance allows one class to reuse properties and functions of another class.
+<div class="code-box"> 
+● Syntax:
+
+class Child : public Parent {
+};
+
+● Example:
+
+class Animal {
+public:
+    void eat() {
+        cout << "Eating";
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Barking";
+    }
+};
+</div>
+● Types of Inheritance:
+
+1. Single Inheritance
+2. Multiple Inheritance
+3. Multilevel Inheritance
+4. Hierarchical Inheritance
+5. Hybrid Inheritance
+    </pre>
+<h1>7. Polymorphism</h1>
+<pre>
+Polymorphism means “many forms”.
+It allows the same function or operator to behave differently.
+
+● Types:
+
+1. Compile-time Polymorphism
+2. Run-time Polymorphism
+</pre>
+<h1>8. Function Overloading (Compile-time Polymorphism)</h1>
+<pre>
+Function overloading means multiple functions with the same name but different parameters.
+
+● Rules:
+
+1. Different number of arguments OR
+2. Different data types
+<div class="code-box"> 
+● Example:
+
+int add(int a, int b) {
+    return a + b;
+}
+
+float add(float a, float b) {
+    return a + b;
+}
+</div>
+✔ Decision is made at compile time.
+</pre>
+<h1>9. Operator Overloading</h1>
+<pre>
+Operator overloading allows operators to work with user-defined data types.
+<div class="code-box"> 
+● Example:
+
+class Test {
+public:
+    int x;
+    Test(int a) {
+        x = a;
+    }
+
+    Test operator +(Test t) {
+        return Test(x + t.x);
+    }
+};
+</div>
+</pre>
+<h1>10. Run-time Polymorphism</h1>
+<pre>
+Occurs when a derived class overrides a base class function.
+
+Uses:
+
+● Virtual functions
+● Base class pointer
+<div class="code-box"> 
+class Base {
+public:
+    virtual void show() {
+        cout << "Base class";
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() {
+        cout << "Derived class";
+    }
+};
+</div>
+✔ Function call resolved at run time
+</pre>
+<h1>11. Virtual Function</h1>
+<pre>
+A function declared using virtual keyword to support runtime polymorphism.
+    
+    virtual void display();
+</pre>
+<h1>12. Constructor</h1>
+<pre>
+constructor is a special function with the same name as the class. It is called automatically when an object is created.
+
+Types:
+
+1. Default Constructor
+2. Parameterized Constructor
+3. Copy Constructor
+<div class="code-box"> 
+class Demo {
+public:
+    Demo() {
+        cout << "Constructor called";
+    }
+}; 
+</div>  
+</pre>
+<h1>13. Destructor</h1>
+<pre>
+A destructor is used to free resources. Called automatically when object goes out of scope.
+<div class="code-box"> 
+~Demo() {
+    cout << "Destructor called";
+}    
+</div>
+</pre>
+<h1>Advantages of OOP</h1>
+<pre>
+✔ Code reuse
+✔ Better security
+✔ Easy maintenance
+✔ Real-world modeling
+</pre>
+<h1>Disadvantages of OOP</h1>
+<pre>
+✖ More memory usage
+✖ Slower execution
+✖ Complex design
+</div>
+</pre>
+</body>
+</html>

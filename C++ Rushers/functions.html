@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in C++</title>
+    <link rel="stylesheet" href="functions.css">
+    <script src="script.js"></script>
+</head>
+<body>
+  <button class="back-btn" onclick="goBack()">Back</button>
+  <h2># Functions in C++ #</h2>
+  <h1>1. What is a Function?</h1>
+  <pre>A function is a block of code that performs a specific task.<br> Functions are used to:<br>●Reduce code repetition<br>●Make programs modular<br>●Improve readability and maintainability<br>
+    <div class="code-box">
+    Syntax:
+return_type function_name(parameter_list) {
+    // statements
+    return value; // if return_type is not void
+}</div>
+</pre>
+<h1>2.Components of Function</h1>  
+<pre>● Return Type: Data type of value returned by function (void if no return value) (e.g, int, float, char)
+   ● Function Name: Identifier for the function (e.g, add, display)
+   ● Parameter List: Comma separated List of input values (arguments) (e.g, int a, int b)
+   ● Function Body : Code block that defines what the function does 
+   ● Return Statements: Specifies the value to be returned (if any)</pre><br>
+
+   <h1>3.Function Declaration VS Function Definition</h1>
+   <pre>● Function Declaration (Prototype) – tells the compiler about the function signature.
+    <div class="code-box">
+  Syntax:
+int add(int, int); // Declaration</pre>
+</div>
+<pre>● Function Definition – actual code of the function
+<div class="code-box"> 
+    Syntax:
+int add(int a, int b) {
+    return a + b;
+}</div>
+</pre>
+<h1>4.Function Call</h1>
+<pre>●Functions execute when called using their name and passing arguments.
+    <div class="code-box"> 
+  Syntax:
+int result = add(5, 3); // Function call</pre>
+    </div><br>
+<h1>5.Types of Functions</h1>
+<h3>A.Based on Parameters and Return Type</h3>
+<table class="table" border="1">
+<tr>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+    </tr>
+    <tr>
+        <td> No parameters, no return</td>
+        <td>performs tasks but no input/output</td>
+        <td>void greet()</td>
+    </tr>
+    <tr>
+        <td>Parameters, no return</td>
+        <td> Takes input but does not return value</td>
+        <td> void printSum(int a, int b)</td>
+    </tr>
+    <tr> 
+        <td>No parameters,returns value</td>
+        <td>No input, returns a value</td>
+        <td>int getNumber()</td>
+    </tr>
+    <tr>
+        <td>Parameters,returns value</td>
+        <td>Takes input and returns result</td>
+        <td>int multiply(int a, int b)</td>
+    </tr>
+</tr>
+</table>
+<pre>
+    <div class="code-box"> 
+    Example:
+   #include &lt;iostream&gt;
+using namespace std;
+
+int add(int a, int b) { return a + b; }
+void greet() { cout << "Hello World\n"; }
+
+int main() {
+    greet();
+    cout << add(5, 3);
+}
+</div>
+</pre>
+<h3> B. Based on Definition Location</h3>
+<pre>1. User-defined – Written by programmer (add(), greet())
+2. Built-in – Provided by C++ (cout, cin, sqrt(), pow())</pre>
+<h3>C. Special Types of Functions</h3>
+<pre>
+    1. Inline Functions - Reduces function call overhead for small functions.
+    <div class="code-box"> 
+    Syntax:
+    inline int square(int x) { return x * x; }
+    </div>
+
+    2. Recursive Functions - function that calls itself to solve smaller subproblems.
+    <div class="code-box"> 
+    Syntax:
+    nt factorial(int n) {
+    if (n == 0) return 1;
+    else return n * factorial(n-1);
+}
+</div>
+
+   3. Default Arguments - Provide default values if parameters are not passed.
+   <div class="code-box"> 
+   Syntax:
+   void greet(string name = "Guest") {
+    cout << "Hello, " << name << endl;
+}
+</div>
+</pre>
+<h1>6. Function Overloading</h1>
+<pre>Function overloading allows multiple functions with the same name but different parameters to exist in a program.<br> This enables functions to perform similar tasks with different input types or numbers of arguments.
+    <div class="code-box"> 
+    int sum(int a, int b) { return a + b; }
+double sum(double a, double b) { return a + b; }
+</div></pre>
+<h1>7.Call by Value VS Call by Reference</h1>
+<table class="table" border="1">
+    <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>Call by Value</td>
+        <td>Passes a copy of the actual argument to the function. Changes inside the function do not affect the original value.</td>
+        <td>void func(int a) { ... }</td>
+    </tr>
+    <tr>
+        <td>Call by Reference</td>
+        <td>Passes the address of the actual argument to the function. Changes inside the function affect the original value.</td>
+        <td>void func(int &a) { ... }</td>
+    </tr>
+</table>
+<h1>8.Benefits of Functions</h1>
+<pre>
+    ●Code Reusability
+    ●Modularity
+    ●Easier Debugging and Testing
+    ●Improved Readability and Maintainability
+</pre>
+<h1>9. Quick Recap</h1>
+<pre>
+    ● Functions are blocks of code that perform specific tasks
+    ● They improve code reusability and modularity
+    ● Functions can be overloaded with different parameters
+    ● They support both call by value and call by reference
+</pre>
+<h1># Some IMP Functions Codes #</h1>
+<h1> 1. Addition of Two Numbers</h1>
+<div class="code-box"> 
+<pre>
+    #include &lt;iostream&gt;
+using namespace std;
+
+int add(int a, int b) { return a + b; }
+void greet() { cout << "Hello World\n"; }
+
+int main() {
+    greet();
+    cout << add(5, 3);
+}
+</div>
+</pre>
+<h1>2. Check if a Number is Even or Odd</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+using namespace std;
+
+bool isEven(int n) {
+    return (n % 2 == 0);
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    if (isEven(num)) {
+        cout << "Even";
+    } else {
+        cout << "Odd";
+    }
+}
+</div>
+</pre>
+<h1>3.Factorial of a Number</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+using namespace std;
+
+int factorial(int n) {
+    if (n == 0) return 1;
+    else return n * factorial(n-1);
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << "Factorial of " << num << " is " << factorial(num);
+}
+</div>
+</pre>
+<h1>4.Fibonacci Series</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+using namespace std;
+
+int fibonacci(int n) {
+    if (n == 0) return 0;
+    else if (n == 1) return 1;
+    else return fibonacci(n-1) + fibonacci(n-2);
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << "Fibonacci of " << num << " is " << fibonacci(num);
+}
+</div>
+</pre>
+<h1>5.Check Prime Number</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    if (isPrime(num)) {
+        cout << "Prime";
+    } else {
+        cout << "Not Prime";
+    }
+}
+</div>
+</pre>
+<h1>6. Find Maximum of Two Numbers</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+using namespace std;
+
+int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    int num1, num2;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+    cout << "Maximum is " << max(num1, num2);
+}
+</div>
+</pre>
+<h1>7. Find Minimum of Two Numbers</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+using namespace std;
+
+int min(int a, int b) {
+    return (a < b) ? a : b;
+}
+
+int main() {
+    int num1, num2;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+    cout << "Minimum is " << min(num1, num2);
+}
+</div>
+</pre>
+<h1>8.Reverse a Number</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+using namespace std;
+
+int reverse(int n) {
+    int rev = 0;
+    while (n != 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
+    }
+    return rev;
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << "Reverse of " << num << " is " << reverse(num);
+}
+<div>
+</pre>
+<h1>9. Swap Two Numbers</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+using namespace std;
+
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int num1, num2;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+    cout << "Before swapping: " << num1 
+    << " and " << num2 << endl;
+    swap(num1, num2);
+    cout << "After swapping: " << num1
+     << " and " << num2;
+}
+</div>
+</pre>
+<h1>10. Calculate Area of Circle</h1>
+<pre>
+    <div class="code-box"> 
+    #include &lt;iostream&gt;
+using namespace std;
+
+double area(double r) {
+    return 3.14 * r * r;
+}
+
+int main() {
+    double radius;
+    cout << "Enter radius of circle: ";
+    cin >> radius;
+    cout << "Area of circle is " << area(radius);
+}
+</div>
+</pre>
+</body>
+</html>

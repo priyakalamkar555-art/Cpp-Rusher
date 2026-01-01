@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in C++</title>
+    <link rel="stylesheet" href="loops.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <button class="back-btn" onclick="goBack()">Back</button>
+    <div class="text-box">
+  <h2># Loops in C++ #</h2> 
+<h1>Basics:</h1>
+<pre> A loop is a control structure that repeats a block of code multiple times until a specific condition becomes false.</pre>
+<h1> Types of Loops in C++</h1>
+<pre>
+C++ supports three main types of loops:
+
+1. for loop
+
+2. while loop
+
+3. do-while loop
+  </pre>
+<h1>🔹For Loop</h1>
+<pre>For loop is used when number of iteration is known.
+Condition is checked before each iteration.
+<div class="code-box">
+🔸 Syntax:
+
+for (initialization; condition; update) {
+    // statements
+}
+</div>
+🔸 Explanation:
+
+Initialization → sets the starting value.
+
+Condition → checked before every iteration.
+
+Update → changes the loop variable after each iteration.
+
+<div class="code-box">
+🔸 Example:
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        cout << i << " ";
+    }
+    return 0;
+}
+
+Output:
+
+1 2 3 4 5
+</div>
+</pre>
+<h1>🔹while Loop</h1>
+<pre>While loop is used when number of iteration is unknown.
+Condition checked before the loop body.
+If condition is false initially, loop doesn't execute.    
+<div class="code-box">
+🔸 Syntax:
+
+while (condition) {
+    // statements
+}
+</div>
+🔸 Explanation:
+
+The condition is checked first.
+
+If true, the body executes; if false, loop ends.
+
+Use when the number of iterations is unknown.
+
+<div class="code-box">
+🔸 Example:
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int i = 1;
+    while (i <= 5) {
+        cout << i << " ";
+        i++;
+    }
+    return 0;
+}
+
+Output:
+
+1 2 3 4 5
+</div>
+</pre>
+<h1>🔹do-while Loop</h1>
+<pre>It executes the body at least once,even if condition is false.
+Condition checked after the loop body.
+<div class="code-box">
+🔸 Syntax:
+
+do {
+    // statements
+} while (condition);
+</div>
+🔸 Explanation:
+
+Executes the body at least once even if the condition is false.
+
+Condition is checked after the loop body.
+
+<div class="code-box">
+🔸 Example:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 1;
+    do {
+        cout << i << " ";
+        i++;
+    } while (i <= 5);
+    return 0;
+}
+
+Output:
+
+1 2 3 4 5
+</div>
+</pre>
+<h1>🔹Difference Between Loops</h1>
+<table class="table" border="1">
+    <tr>
+    <th>Feature</th>
+    <th>for loop</th>
+    <th>while loop</th>
+    <th>do-while loop</th>
+    </tr>
+    <tr>
+        <td>Condition</td>
+        <td>Checked before</td>
+        <td>Checked before</td>
+        <td>Checked after</td>
+    </tr>
+    <tr>
+        <td>Execution</td>
+        <td>0 or more times</td>
+        <td>0 or more times</td>
+        <td>1 or more times</td>
+    </tr>
+    <tr>
+        <td>Use case</td>
+        <td>When number of iteration is known</td>
+        <td>When number of iteration is unknown</td>
+        <td>When at least one execution needed</td>
+    </tr>
+</table>
+<h1>Nested Loops</h1>
+<pre>
+A loop inside another loop.
+<div class="code-box">
+🔸Example:
+
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 2; j++) {
+        cout << "i = " << i << ", j = " << j << endl;
+    }
+}
+
+Output:
+
+i = 1, j = 1  
+i = 1, j = 2  
+i = 2, j = 1  
+i = 2, j = 2  
+i = 3, j = 1  
+i = 3, j = 2
+</div>
+</pre>
+<h1> Loop Control Statements</h1>
+
+<h3>🔹 1. break</h3>
+<pre>
+Used to exit the loop immediately.
+<div class="code-box">
+🔸Example:
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) break;
+    cout << i << " ";
+}
+
+Output: 1 2
+</div>
+</pre>
+<h1>🔹 2. continue</h1>
+<pre>
+Skips the current iteration and goes to the next one.
+<div class="code-box">
+    🔸Example:
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) continue;
+    cout << i << " ";
+}
+
+Output: 1 2 4 5
+</div>
+</pre>
+<h1>🔹 3. goto </h1>
+<div class="code-box">
+<pre>
+Transfers control to a labeled statement.
+(Not recommended in modern C++ — reduces readability.)
+</div>
+</pre>
+<h1># Some Basic But Important Codes in C++ #</h1><br>
+<pre><h1>1. Print Numbers from 1 to 10 (using for loop)</h1>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // Print numbers from 1 to 10
+    for (int i = 1; i <= 10; i++) {
+        cout << i << " ";
+    }
+    return 0;
+}
+
+Output:
+
+1 2 3 4 5 6 7 8 9 10
+</div>
+</pre>
+<pre><h1>2. Print Even Numbers between 1 to 20 (using while loop)</h1>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int i = 2; 
+    // starting from 2 because 2 is the first even number
+    while (i <= 20) {
+        cout << i << " ";
+        i += 2; // increment by 2 to get next even number
+    }
+    return 0;
+}
+
+Output:
+
+2 4 6 8 10 12 14 16 18 20
+</div>
+</pre>
+<pre>
+    <h1>3. Sum of First N Natural Numbers (using for loop)</h1>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, sum = 0;
+    cout << "Enter n: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        sum += i; // add i to sum
+    }
+
+    cout << "Sum = " << sum;
+    return 0;
+}
+
+Input:
+
+5
+
+Output:
+
+Sum = 15
+</div>
+</pre>
+<pre>
+    <h1>4. Factorial of a Number (using while loop)</h1>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, fact = 1, i = 1;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    while (i <= n) {
+        fact *= i;
+        i++;
+    }
+
+    cout << "Factorial = " << fact;
+    return 0;
+}
+
+Input:
+
+5
+
+Output:
+
+Factorial = 120
+</div>
+</pre>
+<pre>
+    <h1>5. Display Multiplication Table of a Number</h1>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    for (int i = 1; i <= 10; i++) {
+        cout << n << " x " << i << " = " << n * i << endl;
+    }
+    return 0;
+}
+
+Input:
+
+5
+
+Output:
+
+5 x 1 = 5
+5 x 2 = 10
+5 × 3 = 15
+5 × 4 = 20
+5 × 5 = 25
+5 × 6 = 30
+5 × 7 = 35
+5 × 8 = 40
+5 × 9 = 45
+5 x 10 = 50
+</div>
+</pre>
+<pre>
+<h1> 6. Print Pattern (Nested Loop Example)</h1>
+<div class="code-box">
+Pattern:
+
+*
+* *
+* * *
+* * * *
+* * * * *
+</div>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int rows;
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for (int i = 1; i <= rows; i++) {     // outer loop for rows
+        for (int j = 1; j <= i; j++) {    // inner loop for columns
+            cout << "* ";
+        }
+        cout << endl; // move to next line
+    }
+    return 0;
+}
+
+Input:
+
+5
+
+Output:
+
+*
+* *
+* * *
+* * * *
+* * * * *
+</div>
+</pre>
+<pre>
+ <h1> 7. Check if a Number is Prime (using loop)</h1>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, i, flag = 0;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    if (n <= 1) {
+        cout << "Not a prime number";
+        return 0;
+    }
+
+    for (i = 2; i <= n / 2; i++) {
+        if (n % i == 0) {
+            flag = 1;
+            break;
+        }
+    }
+
+    if (flag == 0)
+        cout << "Prime number";
+    else
+        cout << "Not a prime number";
+
+    return 0;
+}
+
+Input:
+
+7
+</div>
+</pre>
+<pre>
+ <h1> 8. Reverse a Number (using do-while loop)</h1>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num, rev = 0;
+    cout << "Enter number: ";
+    cin >> num;
+
+    do {
+        int digit = num % 10;   // get last digit
+        rev = rev * 10 + digit; // build reversed number
+        num /= 10;              // remove last digit
+    } while (num != 0);
+
+    cout << "Reversed number = " << rev;
+    return 0;
+}
+
+Input:
+
+1234
+
+Output:
+
+Reversed number = 4321
+</div>
+</div>
+</pre>
+</body>
+</html>

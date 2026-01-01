@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of C++</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="basics.css">
+</head>
+<body>
+    <button class="back-btn" onclick="goBack()">Back</button>
+    <div class="text-box">
+<h2># Basics of C++ #</h2>
+<h1> 1. What is C++</h1>
+<p>C++ is a general-purpose, object-oriented programming language developed by Bjarne Stroustrup in 1979.<br>
+It's basically an extension of the C language with added OOP features.</p>
+<h1> 2. Features of C++</h1>
+<p>Object-Oriented Programming (OOP): Supports classes, objects, inheritance, polymorphism, etc.<br>
+Platform Independent: Can run on any operating system.<br>
+Fast Execution: Compiled language (machine-level).<br>
+Rich Library Support: Includes built-in functions and data structures.<br>
+Low-level + High-level language: Can do both system and application programming.<br>
+Reusability: Through classes and functions.</p>
+
+<h1> 3. Structure of a C++ Program</h1>
+<div class="code-box">
+<pre> #include &lt;iostream&gt;  // Header file <br>
+using namespace std;  // Standard namespace<br>
+int main() {          // Main function (entry point)<br>
+    cout << "Hello World";  // Output statement<br>
+    return 0;              // Terminates program<br>
+}<br>
+</pre></div>
+<p>Explanation:<br>
+#include <iostream> → Preprocessor directive (for input-output)<br>
+using namespace std; → Allows use of standard names directly (like cout, cin)<br>
+main() → Every program starts from here<br>
+cout → Prints output on the screen<br>
+return 0; → Indicates successful program termination</p>
+
+<h1> 4. Header Files</h1>
+<p>
+Used to include built-in functions and objects.<br>
+Header File	Purpose: <br></p>
+<div class="code-box">
+<pre>
+&lt;iostream&gt;	Input / Output (cout, cin) <br>
+&lt;cmath&gt;	  Math functions<br>
+&lt;string&gt;   String operations<br>
+&lt;fstream&gt;   	File handling<br>
+&lt;iomanip&gt;	   Formatting output</pre></div>
+
+<h1> 5. Compilation Process</h1>
+<p>
+1. Preprocessing: Handles directives like #include and #define<br>
+
+2. Compilation: Converts source code → object code<br>
+
+3. Linking: Combines object code with library files<br>
+
+4. Execution: Produces final output</p>
+
+<h1> 6. Basic I/O in C++</h1>
+<Pre><div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int x;
+    cout << "Enter a number: ";
+    cin >> x;
+    cout << "You entered: " << x;
+}
+</div>
+cin → used for input
+
+cout → used for output
+</Pre>
+
+<h1> 7. Comments</h1>
+<p>
+Used to explain code or ignore certain lines.<br>
+// Single line comment<br>
+/* Multi-line<br>
+   comment */</p>
+
+<h1> 8. Namespace</h1>
+<p>
+It helps avoid name conflicts between variables/functions from different libraries.<br>
+Example:<br>
+<pre><div class="code-box">
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello World!";
+}
+
+Without using namespace std;, you must write:
+
+std::cout << "Hello World!";</pre></p>
+</div>
+</div>
+</body>
+</html>

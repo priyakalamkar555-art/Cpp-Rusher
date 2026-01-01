@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pointers in C++</title>
+        <link rel="stylesheet" href="pointers.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <button class="back-btn" onclick="goBack()">Back</button>
+    <div class="text-box">
+    <H2># Pointers in C++ #</H2>
+    <h1>1. What is a Pointer?</h1>
+    <pre>
+A pointer is a variable that stores the memory address of another variable instead of storing a value directly.
+<div class="code-box">
+● Example:
+
+int a = 10;
+int *p = &a;
+
+• a → normal variable
+• &a → address of a
+• p → pointer storing address of a
+</div>    </pre>
+<h1>2. Why Use Pointers?</h1>
+    <pre>
+Pointers are used to:
+
+● Access memory directly
+● Improve program efficiency
+● Pass arguments by reference
+● Support dynamic memory allocation
+● Implement data structures (linked list, stack, queue)
+● Achieve runtime polymorphism
+    </pre>
+  <h1>3. Declaration of Pointer</h1> 
+  <pre>
+    <div class="code-box">
+datatype *pointer_name;
+
+● Example:
+
+float *fptr;
+char *cptr;
+</div>
+  </pre> 
+  <h1>4. Initialization of Pointer</h1>
+  <pre>
+    <div class="code-box">
+● Example:
+
+int x = 5;
+int *ptr = &x;
+</div>
+⚠ A pointer should always be initialized before use.
+  </pre>
+<h1>5. Accessing Value Using Pointer</h1>
+<pre>
+The dereference operator * is used to access the value stored at the address.
+<div class="code-box">
+cout << *ptr;   // prints value of x
+</div>
+</pre>
+<h1>6. Pointer and Address Operators</h1>
+<table class="table" border="1">
+    <tr>
+        <th>Operator</th>
+        <th>Meaning</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>&</td>
+        <td>Address-of operator</td>
+        <td>The address operator (&) is used to get the memory address of a variable</td>
+    </tr>
+    <tr>
+        <td>*</td>
+        <td>Dereference operator</td>
+        <td>The dereference operator (*) is used to get the value stored at an addresss</td>
+    </tr>
+</table>
+<h1>7. Changing Value Using Pointer</h1>
+<pre>
+    <div class="code-box">
+*p = 20;
+cout << a;   // 20
+    </div>
+✔ Changing *p changes a
+</pre>
+<h1>8. Pointer and Array</h1>
+<pre>
+Array name works like a pointer to the first element.
+<div class="code-box">
+int arr[3] = {10, 20, 30};
+int *p = arr;
+
+● Access Elements:
+
+cout << *p;        // 10
+cout << *(p + 1);  // 20
+</div>
+</pre>
+<h1>9. Pointer in Functions(Call by Reference)</h1>
+<pre>
+    <div class="code-box">
+void change(int *x) {
+    *x = 50;
+}
+
+int main() {
+    int a = 10;
+    change(&a);
+    cout << a;   // 50
+}
+</div>
+✔ Function can change original value
+</pre>
+<h1>10. Pointer to Object (simple oop use)</h1>
+<pre>
+    <div class="code-box">
+class Student {
+public:
+    int roll;
+};
+
+Student s;
+Student *p = &s;
+p->roll = 5;
+</div>
+👉 -> is used instead of .
+
+</pre>
+<h1>11. New and Delete</h1>
+<pre>
+Used to create memory during program execution.
+<div class="code-box">
+int *p = new int;
+*p = 100;
+delete p;
+</div>
+</pre>
+<h1>12. Null Pointer</h1>
+<pre>
+A pointer that points to nothing.
+<div class="code-box">
+int *p = nullptr;
+</div>
+✔ Safe practice for beginners
+</pre>
+<h1>13. Dangling Pointer</h1>
+<pre>
+ A pointer pointing to memory that has been deleted.
+<div class="code-box">
+int *p = new int;
+delete p;
+// p is now dangling
+</div>
+✔ Avoid by setting pointer to NULL.   
+</pre>
+<h1>Advantages of Pointers</h1>
+<pre>
+✔ Faster programs
+✔ Saves memory
+✔ Useful in arrays & functions
+
+</pre>
+<h1>Disadvantages of Pointers</h1>
+<pre>
+✖ Hard to understand at first
+✖ Can cause errors if used wrongly
+</pre>
+<h1># Some IMP Programs of Pointers #</h1>
+<h3>1. Swap Two Numbers Using Pointers</h3>
+<pre>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+void swap(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main() {
+    int a = 5, b = 10;
+    swap(&a, &b);
+
+    cout << "a = " << a << " b = " << b;
+    return 0;
+}
+</div>
+</pre>
+<h3>2. Find Maximum of Two Numbers Using Pointers</h3>
+<pre>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int* max(int *x, int *y) {
+    if (*x > *y)
+        return x;
+    else
+        return y;
+}
+
+int main() {
+    int a = 5, b = 10;
+    int *p = max(&a, &b);
+    cout << "Maximum = " << *p;
+    return 0;
+}
+</div>
+</pre>
+<h3>3. Reverse an Array Using Pointers</h3>
+<pre>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+void reverse(int *arr, int size) {
+    int *start = arr;
+    int *end = arr + size - 1;
+    while (start < end) {
+        int temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    reverse(arr, 5);
+    for (int i = 0; i < 5; i++) {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
+</div>
+</pre>
+<h3>4. Find Minimum of Two Numbers Using Pointers</h3>
+<pre>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int* min(int *x, int *y) {
+    if (*x < *y)
+        return x;
+    else
+        return y;
+}
+
+int main() {
+    int a = 5, b = 10;
+    int *p = min(&a, &b);
+    cout << "Minimum = " << *p;
+    return 0;
+}
+</div>
+</pre>
+<h3>5. Count Even Numbers in an Array Using Pointers</h3>
+<pre>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int countEven(int *arr, int size) {
+    int count = 0;
+    for (int i = 0; i < size; i++) {
+        if (*(arr + i) % 2 == 0)
+            count++;
+    }
+    return count;
+}
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    cout << "Even numbers: " << countEven(arr, 5);
+    return 0;
+}
+</div>
+</pre>
+<h3>6. Find Length of String Using Pointers</h3>
+<pre>
+<div class="code-box">
+#include &lt;iostream&gt;
+using namespace std;
+
+int length(char *str) {
+    char *ptr = str;
+    while (*ptr != '\0') {
+        ptr++;
+    }
+    return ptr - str;
+}
+
+int main() {
+    char str[] = "Hello";
+    cout << "Length: " << length(str);
+    return 0;
+}
+</div>
+</div>
+</pre>
+<body>
+</html>
