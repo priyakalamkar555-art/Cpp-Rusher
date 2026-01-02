@@ -2,6 +2,7 @@
 
 Cpp-Rusher is a frontend-based learning platform designed for coders who want to
 learn, build, and improve their coding skills.
+URL: https://priyakalamkar555-art.github.io/C-Rusher/
 
 ## Features
 - 📘 Easy-to-understand notes for beginners
